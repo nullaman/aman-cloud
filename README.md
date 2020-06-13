@@ -3,10 +3,10 @@
 ##### payment模拟支付模块
 ##### order模型订单模块
 
-### eureka7001 7002 集群
+# eureka7001 7002 集群
 服务注册与发现、eureka自我保护机制...
 
-### payment8001 8002集群 order80
+# payment8001 8002集群 order80
 1.Ribbon负载均衡算法LB(轮询、随机...)
  - com.netflix.loadbalancer.RoundRobinRule 轮询
  - com.netflix.loadbalancer.RandomRule 随机
@@ -21,13 +21,13 @@
 3.手写实现【轮询算法】(自旋.)
 
 
-### feign-order80 open-feign
+# feign-order80 open-feign
 1.服务间调用
 
 2.超时控制
 
 3.日志级别
-### feign-hystrix 断路器
+# feign-hystrix 断路器
 
 1.服务降级：兜底的方法处处理，作服务降级fallbac
 
@@ -36,16 +36,16 @@
 3.服务限流：见之后alibaba的sentine
 
 
-### feign-hystrix-dashboard 服务监控
+# feign-hystrix-dashboard 服务监控
 
-### gateway 
+# gateway 
 * Route（路由）
 * Predicate（断言）
 * Filter（过滤）
 
 
-## cloudalibaba-provider-payment9001、9002
+# cloudalibaba-provider-payment9001、9002
 * 完善中
 
-## cloudalibaba-provider-payment9003
+# cloudalibaba-provider-payment9003
 AOP的实现：controller、注解
