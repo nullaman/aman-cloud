@@ -45,7 +45,20 @@
 
 
 # cloudalibaba-provider-payment9001、9002
-* 完善中
+# cloudalibaba-consumer-nacos-order83
+* nacos自带轮询测试
+* Aop
 
 # cloudalibaba-provider-payment9003
-AOP的实现：controller、注解
+AOP的实现：controller拦截、注解拦截
+
+# cloudalibaba-config-nacos-client3377
+读取文件规则：
+> ${spring.application.name}-${spring.profile.active}.${file-extension}
+
+# cloudalibaba-sentinel-service8401
+* sentinel的使用测试，主要使用 /my-jar/sentinel-dashboard.jar
+> java -jar sentinel-dashboard.jar 
+>  运行后，访问localhost:8080进入界面
+
+* 。。。。。完善中。。。。。。。
