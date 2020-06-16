@@ -46,6 +46,38 @@
 
 # cloudalibaba-provider-payment9001、9002
 # cloudalibaba-consumer-nacos-order83
+使用： nacos解压(/my-jar/nacos...)
+> 1.启动：1.windows下:/nacos/bin/startup.cmd 2.Linux下:/nacos/bin/startup.sh
+
+> 2.开启持久化：运行/nacos/conf/nacos-mysql.sql脚本，配置application.properties的数据库连接
+
+> 3.Linux下nacos集群配置：复制/nacos/conf/cluster.conf.example为cluster.conf 
+
+> 新增多个【{ip}:{port}】的配置，修改startup.sh,执行方式：./startup.sh -p {port}
+```shell script
+export FUNCTION_MODE="all"
+while getopts ":m:f:s:p:" opt  #<<<<<此处
+do
+    case $opt in
+        m)
+            MODE=$OPTARG;;
+        f)
+            FUNCTION_MODE=$OPTARG;;
+        s)
+            SERVER=$OPTARG;;
+        p)                     #<<<<<此处
+            PORT=$OPTARG;;     #<<<<<此处
+        ?)
+        echo "Unknown parameter"
+        exit 1;;
+    esac
+done
+
+#start
+echo "$JAVA ${JAVA_OPT}" > ${BASE_DIR}/logs/start.out 2>&1 &
+nohup $JAVA -Dserver.port ${JAVA_OPT} nacos.nacos >> ${BASE_DIR}/logs/start.out 2>&1 &   #<<<<<此处
+```
+
 * nacos自带轮询测试
 * Aop
 
