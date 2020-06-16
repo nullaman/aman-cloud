@@ -15,6 +15,14 @@ spring:
         dashboard: localhost:8080
         # 默认8719端口，假如被占用了会自动从8719端口+1进行扫描，直到找到未被占用的 端口
         port: 8719
+      datasource:
+        ds1:
+          nacos:
+            server-addr: localhost:8848
+            dataId: cloudalibaba-sentinel-service
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
 
 management:
   endpoints:

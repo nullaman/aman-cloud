@@ -90,7 +90,33 @@ AOP的实现：controller拦截、注解拦截
 
 # cloudalibaba-sentinel-service8401
 * sentinel的使用测试，主要使用 /my-jar/sentinel-dashboard.jar
-> java -jar sentinel-dashboard.jar 
->  运行后，访问localhost:8080进入界面
+> java -jar sentinel-dashboard.jar  运行后，访问localhost:8080进入界面
+* sentinel的持久化，持久化进Nacos保存（只要刷新8401某个rest地址，sentinel控制台的流控规则就能看到，只要Nacos里面的配置不删除，针对8401上sentinel上的流控规则持续有效 
+```json
+[
+    {
+        "resource": "/test/byUrl",  
+        "limitApp": "default",
+        "grade": 1,
+        "count": 1,
+        "strategy": 0,
+        "controlBehavior": 0,
+        "clusterMode": false
+    }
+]
+```
+>  "resource": "资源名称",  
+>   "limitApp": "来源应用",  
+>   "grade": 阙值类型：0表示线程数，1表示QPS,  
+>   "count": 单机阙值,   
+>   "strategy": 流控模式：0直接，1关联，2链路,   
+>   "controlBehavior": 流控效果：0快速失败，1Warm Up(当关联的资源达到阈值时，就限流自己)，2排队等候,   
+>   "clusterMode": 是否集群  
 
-* 。。。。。完善中。。。。。。。
+# cloudalibaba-provider-payment9004、9005
+# cloudalibaba-consumer-nacos-order84
+sentinel、ribbon、open-feign整合
+* 【fallback管运行异常，blockHandler管配置违规】
+* openfeign需要order开启feign.sentinel.enabled=true，服务降级(远程服务调用失败、超时...)返回的fallback
+
+
