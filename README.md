@@ -119,4 +119,17 @@ sentinel、ribbon、open-feign整合
 * 【fallback管运行异常，blockHandler管配置违规】
 * openfeign需要order开启feign.sentinel.enabled=true，服务降级(远程服务调用失败、超时...)返回的fallback
 
+# 分布式事务处理（有问题）
+# seata-order-service2001 模拟下单
+# seata-storage-service2002 模拟减少库存
+# seata-account-service2003 模拟减金额
 
+* 模拟用户下单 -> 减少库存 -> 减少金额 -> 修改订单状态
+
+* 雪花算法 生成分布式唯一订单号
+
+问题：启动nacos，配置启动seata，启动Java服务，控制台一直查找不到（待解决
+```text
+2020-06-17 14:47:22.647 ERROR 17304 --- [imeoutChecker_1] i.s.c.r.netty.NettyClientChannelManager  : no available server to connect.
+2020-06-17 14:47:27.634  WARN 17304 --- [nfigOperate_1_2] io.seata.config.FileConfiguration        : Could not found property service.vgroup_mapping.fsp_tx_group, try to use default value instead.
+```

@@ -1,0 +1,66 @@
+server:
+  port: 2002
+
+spring:
+  application:
+    name: seata-storage-service
+  cloud:
+    alibaba:
+      seata:
+        # 自定义事务组名称需要与seata-server中的对应
+        tx-service-group: fsp_tx_group
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  datasource:
+    # 当前数据源操作类型
+    type: com.alibaba.druid.pool.DruidDataSource
+    # mysql驱动类
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/seata_storage?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: wo4caoxiang2
+feign:
+  hystrix:
+    enabled: false
+logging:
+  level:
+    io:
+      seata: info
+
+mybatis-plus:
+  #Mapper路径
+  # 如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mapper/*Mapper.xml
+  # 如果是放在resource目录 classpath:/mapper/*Mapper.xml
+  mapperLocations: classpath:mapper/*.xml
+  #实体,枚举类扫描，多个package用逗号或者分号分隔
+  #  type-aliases-package: com.*.entity
+  type-aliases-package: com.aman.cloud.domain
+  global-config:
+    db-config:
+      #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+      #      AUTO, NONE, INPUT, ID_WORKER, UUID, ID_WORKER_STR;
+      id-type: AUTO
+      #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+      field-strategy: not_empty
+      #驼峰下划线转换
+      column-underline: true
+      #数据库大写下划线转换
+      #capital-mode: true
+      #逻辑删除配置
+      logic-delete-field: delFlag  #全局逻辑删除字段值 3.3.0开始支持，详情看下面。
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+      #数据库类型。支持主流的数据库
+      db-type: mysql
+  #    刷新mapper 调试神器
+  #    refresh: true
+  #      sql-injector: com.baomidou.mybatisplus.extension.injector.LogicSqlInjector
+  configuration:
+    #数据库字段与数据对象字段的映射策略
+    #使用驼峰法映射属性,配置这个resultType可以映射
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+    #配置slq打印日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
