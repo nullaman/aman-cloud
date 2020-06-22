@@ -133,3 +133,8 @@ sentinel、ribbon、open-feign整合
 2020-06-17 14:47:22.647 ERROR 17304 --- [imeoutChecker_1] i.s.c.r.netty.NettyClientChannelManager  : no available server to connect.
 2020-06-17 14:47:27.634  WARN 17304 --- [nfigOperate_1_2] io.seata.config.FileConfiguration        : Could not found property service.vgroup_mapping.fsp_tx_group, try to use default value instead.
 ```
+
+# 设计模式Design-Patterns
+## 单例模式-com.aman.single
+## 原型模式-com.aman.prototype
+## 代理模式-com.aman.proxy
