@@ -1,14 +1,12 @@
 # aman-cloud
 
-##### payment模拟支付模块
-##### order模型订单模块
+#### payment模拟支付模块
+#### order模型订单模块
 
-## 一、
-## eureka7001 7002 集群
+## 一、eureka7001 7002 集群
 服务注册与发现、eureka自我保护机制...
 
-## 二、
-## payment8001 8002集群 order80
+## 二、payment8001 8002集群 order80
 1.Ribbon负载均衡算法LB(轮询、随机...)
  - com.netflix.loadbalancer.RoundRobinRule 轮询
  - com.netflix.loadbalancer.RandomRule 随机
@@ -23,15 +21,13 @@
 3.手写实现【轮询算法】(自旋.)
 
 
-## 三、
-## feign-order80 open-feign
+## 三、feign-order80 open-feign
 1.服务间调用
 
 2.超时控制
 
 3.日志级别
-## 四、
-## feign-hystrix 断路器
+## 四、feign-hystrix 断路器
 
 1.服务降级：兜底的方法处处理，作服务降级fallbac
 
@@ -40,8 +36,7 @@
 3.服务限流：见之后alibaba的sentine
 
 
-## 五、
-## feign-hystrix-dashboard 服务监控
+## 五、feign-hystrix-dashboard 服务监控
 
 ## 六、gateway 
 * Route（路由）
@@ -87,17 +82,14 @@ nohup $JAVA -Dserver.port ${JAVA_OPT} nacos.nacos >> ${BASE_DIR}/logs/start.out 
 * nacos自带轮询测试
 * Aop
 
-## 八、
-## cloudalibaba-provider-payment9003
+## 八、cloudalibaba-provider-payment9003
 AOP的实现：controller拦截、注解拦截
 
-## 九、
-## cloudalibaba-config-nacos-client3377
+## 九、cloudalibaba-config-nacos-client3377
 读取文件规则：
 > ${spring.application.name}-${spring.profile.active}.${file-extension}
 
-## 十、
-## cloudalibaba-sentinel-service8401
+## 十、cloudalibaba-sentinel-service8401
 * sentinel的使用测试，主要使用 /my-jar/sentinel-dashboard.jar
 > java -jar sentinel-dashboard.jar  运行后，访问localhost:8080进入界面
 * sentinel的持久化，持久化进Nacos保存（只要刷新8401某个rest地址，sentinel控制台的流控规则就能看到，只要Nacos里面的配置不删除，针对8401上sentinel上的流控规则持续有效 
@@ -127,7 +119,7 @@ AOP的实现：controller拦截、注解拦截
 ## cloudalibaba-consumer-nacos-order84
 sentinel、ribbon、open-feign整合
 * 【fallback管运行异常，blockHandler管配置违规】
-* openfeign需要order开启feign.sentinel.enabled=true，服务降级(远程服务调用失败、超时...)返回的fallback
+*  openfeign需要order开启feign.sentinel.enabled=true，服务降级(远程服务调用失败、超时...)返回的fallback
 
 ## 十二、分布式事务处理（有问题）
 ## seata-order-service2001 模拟下单
