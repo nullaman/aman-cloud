@@ -31,6 +31,7 @@
         <module>seata-storage-service2002</module>
         <module>seata-account-service2003</module>
         <module>design-patterns</module>
+        <module>data-structure-algorithm</module>
     </modules>
     <artifactId>aman-cloud</artifactId>
 
@@ -55,6 +56,7 @@
         <com.alibaba.fastjson.version>1.2.70</com.alibaba.fastjson.version>
         <cn.hutool.version>5.1.0</cn.hutool.version>
         <com.google.zxing.version>3.4.0</com.google.zxing.version>
+
     </properties>
 
     <!--公共依赖-->
