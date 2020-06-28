@@ -1,4 +1,5 @@
 # aman-cloud
+> 所用到的一些文件:nacos、seata、sentinel... 见仓库[【aman-cloud-file】](https://github.com/nullaman/aman-cloud-file)
 
 #### payment模拟支付模块
 #### order模型订单模块
