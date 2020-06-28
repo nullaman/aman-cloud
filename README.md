@@ -144,3 +144,4 @@ sentinel、ribbon、open-feign整合
 
 ## 十四、数据结构 算法 data-structure-algorithm
 ### 稀疏数组-com.aman.array.sparse
+### 数组实现队列-com.aman.array.queue
