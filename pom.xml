@@ -53,7 +53,7 @@
         <swagger.core.version>1.5.22</swagger.core.version>
         <swagger.bootstrap.version>1.9.6</swagger.bootstrap.version>
         <apache.commons-lang3.version>3.9</apache.commons-lang3.version>
-        <com.alibaba.fastjson.version>1.2.70</com.alibaba.fastjson.version>
+        <com.alibaba.fastjson.version>1.2.83</com.alibaba.fastjson.version>
         <cn.hutool.version>5.1.0</cn.hutool.version>
         <com.google.zxing.version>3.4.0</com.google.zxing.version>
 
